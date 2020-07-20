@@ -1,6 +1,7 @@
 import os
 
-remote = 'https://github.com/prendradjaja/keycube.git'
+REMOTE = 'https://github.com/prendradjaja/keycube.git'
+THIS_REPO_NAME = 'keycube-experimental'
 
 os.system('rm -rf x')
 
@@ -12,11 +13,12 @@ for line in open('branches'):
     os.system(
         'git clone --single-branch --branch ' +
         branch + ' ' +
-        remote + ' ' +
+        REMOTE + ' ' +
         directory
     )
     os.system('rm -rf '+directory+'/.git')
-    indexhtml += '<a href="/'+directory+'">'+branch+'</a><br>\n'
+    href = '/'+THIS_REPO_NAME+'/'+directory
+    indexhtml += '<a href="'+href+'">'+branch+'</a><br>\n'
 
 with open('index.html', 'w') as index:
     index.write(indexhtml)
