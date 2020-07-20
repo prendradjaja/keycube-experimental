@@ -15,7 +15,7 @@ for line in open('branches'):
         branch + ' ' +
         REMOTE + ' ' +
         directory
-    )
+    ) and exit()  # Exit if failed
     os.system('rm -rf '+directory+'/.git')
     href = '/'+THIS_REPO_NAME+'/'+directory
     indexhtml += '<a href="'+href+'">'+branch+'</a><br>\n'
