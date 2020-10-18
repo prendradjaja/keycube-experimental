@@ -1,0 +1,7 @@
+.eocube circle:not(.misoriented) {
+  fill: white;
+}
+
+.eocube circle.misoriented {
+  fill: #980b0b;
+}
